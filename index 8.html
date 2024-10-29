@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solana Dashboard | Premium Swap & Charts</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Styling remains the same */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: linear-gradient(to right, #06b6d4, #3b82f6);
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: rgba(50, 50, 50, 0.8);
+      border-bottom: 2px solid rgba(211, 211, 211, 0.5);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .cta-button {
+      position: absolute;
+      right: 20px;
+      padding: 12px 24px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background-color: darkred;
+      transform: scale(1.05);
+    }
+
+    /* LiveCoinWatch Widget Styling */
+    .widget-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    /* TV Screen Styling */
+    .tv-screen {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 15px;
+      background: #0f0f0f;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .tv-screen::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 8px;
+      background: #444;
+      border-radius: 4px;
+    }
+
+    .tv-frame iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 15px;
+    }
+
+    /* Tablet Widget Styling */
+    .tablet {
+      flex: 1 1 calc(48% - 10px);
+      background: linear-gradient(145deg, #111, #222);
+      border: 1px solid rgba(211, 211, 211, 0.5);
+      border-radius: 30px;
+      padding: 20px;
+      box-shadow: inset 0 5px 10px rgba(255, 255, 255, 0.1),
+                  0 8px 25px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .tablet:hover {
+      transform: scale(1.05);
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1300px;
+      margin: 40px auto;
+      gap: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background-color: rgba(50, 50, 50, 0.8);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    /* iPhone-like styling for the terminal */
+    #integrated-terminal {
+      width: 400px;
+      height: 568px;
+      margin: 40px auto;
+      border-radius: 38px; /* Rounded corners */
+      border: 16px solid rgba(255, 255, 255, 0.2); /* White border */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Shadow effect */
+      overflow: hidden; /* Hide overflow */
+      position: relative; /* Positioning for the frame */
+      background: #111; /* Background color similar to iPhone */
+    }
+
+    /* Additional styling for the inner terminal */
+    .jupiter-terminal-inner {
+      border-radius: 38px; /* Inner border radius to match */
+      overflow: hidden; /* Hide overflow */
+    }
+
+    @media (max-width: 768px) {
+      .tablet {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+
+  <!-- Add Jupiter Terminal Script -->
+  <script src='https://terminal.jup.ag/main-v3.js'></script>
+  <script defer src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-title">
+      <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana Logo" width="50">
+      <h1>Solana Dashboard</h1>
+    </div>
+    <a href="https://www.tradingview.com/chart/NTA6mN1K/?symbol=BINANCE%3ASOLUSDC" target="_blank" class="cta-button">Check Alert</a>
+  </header>
+
+  <div class="widget-container">
+    <div class="livecoinwatch-widget-5" 
+         lcw-base="USD" 
+         lcw-color-tx="#999999" 
+         lcw-marquee-1="coins" 
+         lcw-marquee-2="movers" 
+         lcw-marquee-items="10" 
+         lcw-platform="SOL">
+    </div>
+  </div>
+
+  <div class="tv-screen">
+    <div class="tv-frame">
+      <iframe src="https://www.youtube.com/embed/mtmVRj--3lk?autoplay=1&controls=0" 
+              allow="autoplay" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="tablet">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {
+            "autosize": true,
+            "symbol": "BINANCE:SOLUSDC",
+            "interval": "15",
+            "theme": "dark"
+          }
+        </script>
+      </div>
+    </div>
+
+    <div class="tablet">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {
+            "symbol": "BINANCE:SOLUSDC",
+            "width": "100%",
+            "height": 300,
+            "locale": "en",
+            "colorTheme": "dark"
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jupiter Terminal Div placed below the tablet widgets -->
+  <div id="integrated-terminal" class="jupiter-terminal-inner"></div>
+
+  <footer>
+    &copy; 2024 Solana Dashboard. All rights reserved.
+  </footer>
+
+  <!-- Initialize Jupiter Terminal -->
+  <script>
+    window.Jupiter.init({
+      displayMode: "integrated", // Mode of display
+      integratedTargetId: "integrated-terminal", // Target div for rendering the terminal
+      endpoint: "https://hardworking-warmhearted-research.solana-mainnet.quiknode.pro/78bc906820c46782432684c51b752812024a6cc5", // Solana RPC endpoint
+      formProps: {
+        swapMode: "ExactIn" // Mode for swaps
+      },
+    });
+  </script>
+
+</body>
+
+</html>
