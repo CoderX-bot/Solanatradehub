@@ -1,0 +1,130 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Header styling */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(50, 50, 50, 0.8);
+  border-bottom: 2px solid rgba(211, 211, 211, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.cta-button {
+  position: absolute;
+  right: 20px;
+  padding: 12px 24px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, transform 0.2s ease;
+  will-change: transform;
+}
+
+.cta-button:hover {
+  background-color: darkred;
+  transform: scale(1.05);
+}
+
+.widget-container, .tv-screen, .tablet {
+  margin: 20px auto;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* TV screen improvements */
+.tv-screen {
+  max-width: 800px;
+}
+
+.tv-screen::before {
+  width: 80px;
+  height: 8px;
+  background: #444;
+  border-radius: 4px;
+}
+
+/* Tablet Widget */
+.tablet {
+  flex: 1 1 calc(48% - 10px);
+  background: linear-gradient(145deg, #111, #222);
+  border: 1px solid rgba(211, 211, 211, 0.5);
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: inset 0 5px 10px rgba(255, 255, 255, 0.1),
+              0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.tablet:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 40px auto;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .tablet {
+    flex: 1 1 100%;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: rgba(50, 50, 50, 0.8);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* Jupiter Terminal */
+#integrated-terminal {
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  border-radius: 38px;
+  border: 16px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  background: #111;
+}
